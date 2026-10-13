@@ -1,0 +1,149 @@
+{
+ "name": "overlay_cpc_mode0",
+ "note": "επικαλύψεις 12x24 με μάσκα — δείκτης, κλουβί, εφέ",
+ "cell": {
+  "w": 12,
+  "h": 24
+ },
+ "masked": true,
+ "bytes_per_frame": 288,
+ "total_bytes": 4032,
+ "sheet": {
+  "cols": 7,
+  "rows": 2,
+  "w": 84,
+  "h": 48
+ },
+ "tags": [
+  {
+   "name": "cursor",
+   "from": 0,
+   "to": 1
+  },
+  {
+   "name": "blocker",
+   "from": 2,
+   "to": 3
+  },
+  {
+   "name": "pop",
+   "from": 4,
+   "to": 7
+  },
+  {
+   "name": "beam_h",
+   "from": 8,
+   "to": 9
+  },
+  {
+   "name": "beam_v",
+   "from": 10,
+   "to": 11
+  },
+  {
+   "name": "star",
+   "from": 12,
+   "to": 13
+  }
+ ],
+ "frames": [
+  {
+   "index": 0,
+   "name": "cursor1",
+   "tag": "cursor",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "index": 1,
+   "name": "cursor2",
+   "tag": "cursor",
+   "x": 12,
+   "y": 0
+  },
+  {
+   "index": 2,
+   "name": "cage",
+   "tag": "blocker",
+   "x": 24,
+   "y": 0
+  },
+  {
+   "index": 3,
+   "name": "marmalade",
+   "tag": "blocker",
+   "x": 36,
+   "y": 0
+  },
+  {
+   "index": 4,
+   "name": "pop1",
+   "tag": "pop",
+   "x": 48,
+   "y": 0
+  },
+  {
+   "index": 5,
+   "name": "pop2",
+   "tag": "pop",
+   "x": 60,
+   "y": 0
+  },
+  {
+   "index": 6,
+   "name": "pop3",
+   "tag": "pop",
+   "x": 72,
+   "y": 0
+  },
+  {
+   "index": 7,
+   "name": "pop4",
+   "tag": "pop",
+   "x": 0,
+   "y": 24
+  },
+  {
+   "index": 8,
+   "name": "beam_h1",
+   "tag": "beam_h",
+   "x": 12,
+   "y": 24
+  },
+  {
+   "index": 9,
+   "name": "beam_h2",
+   "tag": "beam_h",
+   "x": 24,
+   "y": 24
+  },
+  {
+   "index": 10,
+   "name": "beam_v1",
+   "tag": "beam_v",
+   "x": 36,
+   "y": 24
+  },
+  {
+   "index": 11,
+   "name": "beam_v2",
+   "tag": "beam_v",
+   "x": 48,
+   "y": 24
+  },
+  {
+   "index": 12,
+   "name": "star1",
+   "tag": "star",
+   "x": 60,
+   "y": 24
+  },
+  {
+   "index": 13,
+   "name": "star2",
+   "tag": "star",
+   "x": 72,
+   "y": 24
+  }
+ ]
+}

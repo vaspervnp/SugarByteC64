@@ -1,0 +1,253 @@
+{
+ "name": "text_cpc_mode0",
+ "note": "κείμενο 4x8 αδιαφανές — κεφαλαία, χάρακας, μπάρα προόδου",
+ "cell": {
+  "w": 4,
+  "h": 8
+ },
+ "masked": false,
+ "bytes_per_frame": 16,
+ "total_bytes": 496,
+ "sheet": {
+  "cols": 7,
+  "rows": 5,
+  "w": 28,
+  "h": 40
+ },
+ "tags": [
+  {
+   "name": "letters",
+   "from": 0,
+   "to": 25
+  },
+  {
+   "name": "rule",
+   "from": 26,
+   "to": 26
+  },
+  {
+   "name": "bar",
+   "from": 27,
+   "to": 30
+  }
+ ],
+ "frames": [
+  {
+   "index": 0,
+   "name": "letter_A",
+   "tag": "letters",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "index": 1,
+   "name": "letter_B",
+   "tag": "letters",
+   "x": 4,
+   "y": 0
+  },
+  {
+   "index": 2,
+   "name": "letter_C",
+   "tag": "letters",
+   "x": 8,
+   "y": 0
+  },
+  {
+   "index": 3,
+   "name": "letter_D",
+   "tag": "letters",
+   "x": 12,
+   "y": 0
+  },
+  {
+   "index": 4,
+   "name": "letter_E",
+   "tag": "letters",
+   "x": 16,
+   "y": 0
+  },
+  {
+   "index": 5,
+   "name": "letter_F",
+   "tag": "letters",
+   "x": 20,
+   "y": 0
+  },
+  {
+   "index": 6,
+   "name": "letter_G",
+   "tag": "letters",
+   "x": 24,
+   "y": 0
+  },
+  {
+   "index": 7,
+   "name": "letter_H",
+   "tag": "letters",
+   "x": 0,
+   "y": 8
+  },
+  {
+   "index": 8,
+   "name": "letter_I",
+   "tag": "letters",
+   "x": 4,
+   "y": 8
+  },
+  {
+   "index": 9,
+   "name": "letter_J",
+   "tag": "letters",
+   "x": 8,
+   "y": 8
+  },
+  {
+   "index": 10,
+   "name": "letter_K",
+   "tag": "letters",
+   "x": 12,
+   "y": 8
+  },
+  {
+   "index": 11,
+   "name": "letter_L",
+   "tag": "letters",
+   "x": 16,
+   "y": 8
+  },
+  {
+   "index": 12,
+   "name": "letter_M",
+   "tag": "letters",
+   "x": 20,
+   "y": 8
+  },
+  {
+   "index": 13,
+   "name": "letter_N",
+   "tag": "letters",
+   "x": 24,
+   "y": 8
+  },
+  {
+   "index": 14,
+   "name": "letter_O",
+   "tag": "letters",
+   "x": 0,
+   "y": 16
+  },
+  {
+   "index": 15,
+   "name": "letter_P",
+   "tag": "letters",
+   "x": 4,
+   "y": 16
+  },
+  {
+   "index": 16,
+   "name": "letter_Q",
+   "tag": "letters",
+   "x": 8,
+   "y": 16
+  },
+  {
+   "index": 17,
+   "name": "letter_R",
+   "tag": "letters",
+   "x": 12,
+   "y": 16
+  },
+  {
+   "index": 18,
+   "name": "letter_S",
+   "tag": "letters",
+   "x": 16,
+   "y": 16
+  },
+  {
+   "index": 19,
+   "name": "letter_T",
+   "tag": "letters",
+   "x": 20,
+   "y": 16
+  },
+  {
+   "index": 20,
+   "name": "letter_U",
+   "tag": "letters",
+   "x": 24,
+   "y": 16
+  },
+  {
+   "index": 21,
+   "name": "letter_V",
+   "tag": "letters",
+   "x": 0,
+   "y": 24
+  },
+  {
+   "index": 22,
+   "name": "letter_W",
+   "tag": "letters",
+   "x": 4,
+   "y": 24
+  },
+  {
+   "index": 23,
+   "name": "letter_X",
+   "tag": "letters",
+   "x": 8,
+   "y": 24
+  },
+  {
+   "index": 24,
+   "name": "letter_Y",
+   "tag": "letters",
+   "x": 12,
+   "y": 24
+  },
+  {
+   "index": 25,
+   "name": "letter_Z",
+   "tag": "letters",
+   "x": 16,
+   "y": 24
+  },
+  {
+   "index": 26,
+   "name": "rule",
+   "tag": "rule",
+   "x": 20,
+   "y": 24
+  },
+  {
+   "index": 27,
+   "name": "bar_l",
+   "tag": "bar",
+   "x": 24,
+   "y": 24
+  },
+  {
+   "index": 28,
+   "name": "bar_e",
+   "tag": "bar",
+   "x": 0,
+   "y": 32
+  },
+  {
+   "index": 29,
+   "name": "bar_f",
+   "tag": "bar",
+   "x": 4,
+   "y": 32
+  },
+  {
+   "index": 30,
+   "name": "bar_r",
+   "tag": "bar",
+   "x": 8,
+   "y": 32
+  }
+ ]
+}

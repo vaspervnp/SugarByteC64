@@ -1,0 +1,240 @@
+{
+ "name": "candy_cpc_mode0",
+ "note": "candies 12x24 με μάσκα — 6 χρώματα x 4 μορφές, βόμβα, υλικά",
+ "cell": {
+  "w": 12,
+  "h": 24
+ },
+ "masked": true,
+ "bytes_per_frame": 288,
+ "total_bytes": 7776,
+ "sheet": {
+  "cols": 7,
+  "rows": 4,
+  "w": 84,
+  "h": 96
+ },
+ "tags": [
+  {
+   "name": "plain",
+   "from": 0,
+   "to": 5
+  },
+  {
+   "name": "striped_h",
+   "from": 6,
+   "to": 11
+  },
+  {
+   "name": "striped_v",
+   "from": 12,
+   "to": 17
+  },
+  {
+   "name": "wrapped",
+   "from": 18,
+   "to": 23
+  },
+  {
+   "name": "bomb",
+   "from": 24,
+   "to": 24
+  },
+  {
+   "name": "ingredient",
+   "from": 25,
+   "to": 26
+  }
+ ],
+ "frames": [
+  {
+   "index": 0,
+   "name": "red",
+   "tag": "plain",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "index": 1,
+   "name": "orange",
+   "tag": "plain",
+   "x": 12,
+   "y": 0
+  },
+  {
+   "index": 2,
+   "name": "yellow",
+   "tag": "plain",
+   "x": 24,
+   "y": 0
+  },
+  {
+   "index": 3,
+   "name": "green",
+   "tag": "plain",
+   "x": 36,
+   "y": 0
+  },
+  {
+   "index": 4,
+   "name": "blue",
+   "tag": "plain",
+   "x": 48,
+   "y": 0
+  },
+  {
+   "index": 5,
+   "name": "purple",
+   "tag": "plain",
+   "x": 60,
+   "y": 0
+  },
+  {
+   "index": 6,
+   "name": "red",
+   "tag": "striped_h",
+   "x": 72,
+   "y": 0
+  },
+  {
+   "index": 7,
+   "name": "orange",
+   "tag": "striped_h",
+   "x": 0,
+   "y": 24
+  },
+  {
+   "index": 8,
+   "name": "yellow",
+   "tag": "striped_h",
+   "x": 12,
+   "y": 24
+  },
+  {
+   "index": 9,
+   "name": "green",
+   "tag": "striped_h",
+   "x": 24,
+   "y": 24
+  },
+  {
+   "index": 10,
+   "name": "blue",
+   "tag": "striped_h",
+   "x": 36,
+   "y": 24
+  },
+  {
+   "index": 11,
+   "name": "purple",
+   "tag": "striped_h",
+   "x": 48,
+   "y": 24
+  },
+  {
+   "index": 12,
+   "name": "red",
+   "tag": "striped_v",
+   "x": 60,
+   "y": 24
+  },
+  {
+   "index": 13,
+   "name": "orange",
+   "tag": "striped_v",
+   "x": 72,
+   "y": 24
+  },
+  {
+   "index": 14,
+   "name": "yellow",
+   "tag": "striped_v",
+   "x": 0,
+   "y": 48
+  },
+  {
+   "index": 15,
+   "name": "green",
+   "tag": "striped_v",
+   "x": 12,
+   "y": 48
+  },
+  {
+   "index": 16,
+   "name": "blue",
+   "tag": "striped_v",
+   "x": 24,
+   "y": 48
+  },
+  {
+   "index": 17,
+   "name": "purple",
+   "tag": "striped_v",
+   "x": 36,
+   "y": 48
+  },
+  {
+   "index": 18,
+   "name": "red",
+   "tag": "wrapped",
+   "x": 48,
+   "y": 48
+  },
+  {
+   "index": 19,
+   "name": "orange",
+   "tag": "wrapped",
+   "x": 60,
+   "y": 48
+  },
+  {
+   "index": 20,
+   "name": "yellow",
+   "tag": "wrapped",
+   "x": 72,
+   "y": 48
+  },
+  {
+   "index": 21,
+   "name": "green",
+   "tag": "wrapped",
+   "x": 0,
+   "y": 72
+  },
+  {
+   "index": 22,
+   "name": "blue",
+   "tag": "wrapped",
+   "x": 12,
+   "y": 72
+  },
+  {
+   "index": 23,
+   "name": "purple",
+   "tag": "wrapped",
+   "x": 24,
+   "y": 72
+  },
+  {
+   "index": 24,
+   "name": "colour_bomb",
+   "tag": "bomb",
+   "x": 36,
+   "y": 72
+  },
+  {
+   "index": 25,
+   "name": "cherry",
+   "tag": "ingredient",
+   "x": 48,
+   "y": 72
+  },
+  {
+   "index": 26,
+   "name": "nut",
+   "tag": "ingredient",
+   "x": 60,
+   "y": 72
+  }
+ ]
+}

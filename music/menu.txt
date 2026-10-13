@@ -1,0 +1,24 @@
+# Menu tune: calm, C major, a flute over a harp. Written for the SID.
+# tune: menu
+# quarter: 20
+# loop: yes
+#
+# Chords, bar by bar:  C G Am G | C F G C
+
+# --- melody (voice 1) ---
+pat rest1: r/1
+pat m1: @flute E5/4 G5/8 F5/8 E5/4. D5/8 | C5/4 D5/8 E5/8 D5/2 | E5/4 G5/8 A5/8 G5/4 E5/4 | F5/4. E5/8 D5/2 |
+        E5/4 G5/8 F5/8 E5/4. D5/8 | C5/4 E5/8 G5/8 C6/4 A5/4 | G5/8 A5/8 G5/8 F5/8 E5/4 D5/4 | C5/2. r/4
+
+# --- bass (voice 2): a bar in C (transposed) ---
+pat mb: @mbass C2/4 G2/4 C3/4 G2/4
+seq mb1: mb mb-5 mb-3 mb-5 mb mb+5 mb-5 mb
+
+# --- harp (voice 3): a broken chord, a bar in C ---
+pat hM: @harp C4/8 E4/8 G4/8 C5/8 G4/8 E4/8 G4/8 E4/8
+pat hm: @harp C4/8 D#4/8 G4/8 C5/8 G4/8 D#4/8 G4/8 D#4/8
+seq h1: hM hM-5 hm-3 hM-5 hM hM+5 hM-5 hM
+
+v1: rest1 > m1
+v2: mb > mb1
+v3: hM > h1

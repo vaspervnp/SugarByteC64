@@ -1,0 +1,66 @@
+{
+ "name": "menu_cpc_mode0",
+ "note": "μενού 16x24 αδιαφανές — πιάτο επιλογής και δείκτης",
+ "cell": {
+  "w": 16,
+  "h": 24
+ },
+ "masked": false,
+ "bytes_per_frame": 192,
+ "total_bytes": 960,
+ "sheet": {
+  "cols": 7,
+  "rows": 1,
+  "w": 112,
+  "h": 24
+ },
+ "tags": [
+  {
+   "name": "plate",
+   "from": 0,
+   "to": 2
+  },
+  {
+   "name": "pointer",
+   "from": 3,
+   "to": 4
+  }
+ ],
+ "frames": [
+  {
+   "index": 0,
+   "name": "plate_m",
+   "tag": "plate",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "index": 1,
+   "name": "plate_l",
+   "tag": "plate",
+   "x": 16,
+   "y": 0
+  },
+  {
+   "index": 2,
+   "name": "plate_r",
+   "tag": "plate",
+   "x": 32,
+   "y": 0
+  },
+  {
+   "index": 3,
+   "name": "pointer1",
+   "tag": "pointer",
+   "x": 48,
+   "y": 0
+  },
+  {
+   "index": 4,
+   "name": "pointer2",
+   "tag": "pointer",
+   "x": 64,
+   "y": 0
+  }
+ ]
+}

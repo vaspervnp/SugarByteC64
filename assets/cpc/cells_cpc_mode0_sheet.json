@@ -1,0 +1,111 @@
+{
+ "name": "cells_cpc_mode0",
+ "note": "κελιά ταμπλό 12x24, αδιαφανή — φόντο, ζελέ, γλάσο, εμπόδια",
+ "cell": {
+  "w": 12,
+  "h": 24
+ },
+ "masked": false,
+ "bytes_per_frame": 144,
+ "total_bytes": 1440,
+ "sheet": {
+  "cols": 7,
+  "rows": 2,
+  "w": 84,
+  "h": 48
+ },
+ "tags": [
+  {
+   "name": "board",
+   "from": 0,
+   "to": 2
+  },
+  {
+   "name": "jelly",
+   "from": 3,
+   "to": 4
+  },
+  {
+   "name": "icing",
+   "from": 5,
+   "to": 7
+  },
+  {
+   "name": "blocker",
+   "from": 8,
+   "to": 9
+  }
+ ],
+ "frames": [
+  {
+   "index": 0,
+   "name": "plain",
+   "tag": "board",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "index": 1,
+   "name": "plain_alt",
+   "tag": "board",
+   "x": 12,
+   "y": 0
+  },
+  {
+   "index": 2,
+   "name": "hole",
+   "tag": "board",
+   "x": 24,
+   "y": 0
+  },
+  {
+   "index": 3,
+   "name": "jelly1",
+   "tag": "jelly",
+   "x": 36,
+   "y": 0
+  },
+  {
+   "index": 4,
+   "name": "jelly2",
+   "tag": "jelly",
+   "x": 48,
+   "y": 0
+  },
+  {
+   "index": 5,
+   "name": "icing3",
+   "tag": "icing",
+   "x": 60,
+   "y": 0
+  },
+  {
+   "index": 6,
+   "name": "icing2",
+   "tag": "icing",
+   "x": 72,
+   "y": 0
+  },
+  {
+   "index": 7,
+   "name": "icing1",
+   "tag": "icing",
+   "x": 0,
+   "y": 24
+  },
+  {
+   "index": 8,
+   "name": "chocolate",
+   "tag": "blocker",
+   "x": 12,
+   "y": 24
+  },
+  {
+   "index": 9,
+   "name": "licorice",
+   "tag": "blocker",
+   "x": 24,
+   "y": 24
+  }
+ ]
+}

@@ -1,0 +1,40 @@
+# Game tune: cheerful, C major - the CPC's melody (A), and a B section in A
+# minor written for the SID. Lead, bass through the filter, drums and chords.
+# tune: game
+# quarter: 16
+# loop: yes
+#
+# Form: intro (2 bars of drums and bass), A (8 bars), A again, B (8, the saw),
+# then back to A. Chords, half a bar each:
+#   A:  C C | F F | G G | C C | C Am | Dm F | C F | G C
+#   B:  Am Am | F F | G G | C C | Am Am | Dm Dm | G G | C C
+
+# --- melody (voice 1) ---
+pat rest2: r/1 r/1
+pat m1: @lead C5/8 E5/8 G5/8 E5/8 C6/8 G5/8 E5/8 G5/8 | A4/8 C5/8 F5/8 C5/8 A5/8 F5/8 C5/8 F5/8 |
+        G4/8 B4/8 D5/8 G5/8 F5/8 D5/8 B4/8 D5/8 | C5/8 E5/8 G5/8 C6/8 G5/4 r/4
+pat m2: @lead E5/4 G5/4 A5/8 G5/8 E5/8 C5/8 | D5/4 F5/4 A5/8 G5/8 F5/8 D5/8 |
+        E5/8 G5/8 C6/8 G5/8 F5/8 A5/8 D6/8 A5/8 | G5/8 F5/8 E5/8 D5/8 C5/4 r/4
+pat pb: @lead2 A5/4 G5/8 E5/8 C5/4 E5/4 | F5/4. E5/8 D5/8 C5/8 A4/4 | B4/8 D5/8 G5/8 B5/8 A5/8 G5/8 F5/8 D5/8 |
+        E5/4 C5/4 G4/2 | C6/4 B5/8 A5/8 E5/4 A5/4 | F5/4 E5/8 D5/8 A4/4 D5/4 |
+        G5/8 F5/8 E5/8 D5/8 B4/8 C5/8 D5/8 B4/8 | C5/2 r/2
+
+# --- bass (voice 2): half a bar, root and octave, in C (transposed) ---
+pat bh:  @bass C2/8 C3/8 C2/8 C3/8
+pat bh5: @bass C2/8 C3/8 G2/8 C3/8
+seq bsA: bh bh5 bh+5 bh5+5 bh-5 bh5-5 bh bh5 bh bh-3 bh+2 bh+5 bh bh+5 bh-5 bh
+seq bsB: bh-3 bh5-3 bh+5 bh5+5 bh-5 bh5-5 bh bh5 bh-3 bh5-3 bh+2 bh5+2 bh-5 bh5-5 bh bh5
+
+# --- drums and chords (voice 3): half a bar; the chord on C4 (transposed) ---
+pat dM:  @kick C3/8 @arpM C4/8 @snare C3/8 @arpM C4/8
+pat dM2: @kick C3/8 @kick C3/8 @snare C3/8 @arpM C4/8
+pat dm:  @kick C3/8 @arpm C4/8 @snare C3/8 @arpm C4/8
+pat dm2: @kick C3/8 @kick C3/8 @snare C3/8 @arpm C4/8
+pat dH:  @kick C3/8 @hat C3/8 @snare C3/8 @hat C3/8
+pat dF:  @kick C3/8 @snare C3/16 C3/16 C3/8 C3/16 C3/16
+seq dsA: dM dM2 dM+5 dM2+5 dM-5 dM2-5 dM dM2 dM dm-3 dm+2 dM+5 dM dM2+5 dM-5 dF
+seq dsB: dm-3 dm2-3 dM+5 dM2+5 dM-5 dM2-5 dM dF dm-3 dm2-3 dm+2 dm2+2 dM-5 dM2-5 dM dF
+
+v1: rest2 > m1 m2 m1 m2 pb
+v2: bh bh5 bh bh5 > bsA bsA bsB
+v3: dH dH dH dF > dsA dsA dsB

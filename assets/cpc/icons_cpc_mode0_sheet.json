@@ -1,0 +1,82 @@
+{
+ "name": "icons_cpc_mode0",
+ "note": "εικονίδια HUD 8x16 αδιαφανή — βάζο, βέλη, κλεψύδρα, γλειφιτζούρι, ζελέ, αστέρια, λουκέτο",
+ "cell": {
+  "w": 8,
+  "h": 16
+ },
+ "masked": false,
+ "bytes_per_frame": 64,
+ "total_bytes": 512,
+ "sheet": {
+  "cols": 7,
+  "rows": 2,
+  "w": 56,
+  "h": 32
+ },
+ "tags": [
+  {
+   "name": "icon",
+   "from": 0,
+   "to": 7
+  }
+ ],
+ "frames": [
+  {
+   "index": 0,
+   "name": "score",
+   "tag": "icon",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "index": 1,
+   "name": "moves",
+   "tag": "icon",
+   "x": 8,
+   "y": 0
+  },
+  {
+   "index": 2,
+   "name": "time",
+   "tag": "icon",
+   "x": 16,
+   "y": 0
+  },
+  {
+   "index": 3,
+   "name": "goal",
+   "tag": "icon",
+   "x": 24,
+   "y": 0
+  },
+  {
+   "index": 4,
+   "name": "jelly",
+   "tag": "icon",
+   "x": 32,
+   "y": 0
+  },
+  {
+   "index": 5,
+   "name": "star_on",
+   "tag": "icon",
+   "x": 40,
+   "y": 0
+  },
+  {
+   "index": 6,
+   "name": "star_off",
+   "tag": "icon",
+   "x": 48,
+   "y": 0
+  },
+  {
+   "index": 7,
+   "name": "lock",
+   "tag": "icon",
+   "x": 0,
+   "y": 16
+  }
+ ]
+}

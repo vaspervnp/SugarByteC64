@@ -1,0 +1,18 @@
+# Sound effects on voice 3, one step per 1/50 s: the CPC's, converted.
+# name prio: steps    step = note:volume | nNN:volume (noise, the AY's period NN) | r
+# A higher priority interrupts a lower one, never the other way round.
+select 1: C5:12 F5:10
+swap 1: G3:11 B3:11 D4:10 F#4:8
+bad 1: B2:13 A2:12 G2:11 F2:10 D#2:8 C#2:6
+beam 2: E6:14 D6:13 C6:12 A#5:11 A5:10 G5:9 F#5:8 F5:7 E5:6 D#5:5
+wrap 3: n9:15 n10:14 n11:13 n12:12 n13:11 n14:10 n15:9 n16:8 n17:7 n18:6 n19:5 n20:4
+bomb 3: n13:15 n14:14 n15:14 n16:13 n17:13 n18:12 n19:12 n20:11 n21:11 n22:10 n23:10 n24:9 n25:9 n26:8 n27:8
+collect 2: C6:13 C6:13 C6:13 E6:13 E6:13 E6:13 G6:13 G6:13 G6:13 C7:14 C7:13 C7:12 C7:11 C7:10 C7:9
+over 4: G4:13 G4:13 G4:12 G4:12 G4:11 G4:11 G4:10 G4:10 E4:12 E4:12 E4:11 E4:11 E4:10 E4:10 E4:9 E4:9 C4:12 C4:11 C4:11 C4:10 C4:9 C4:9 C4:8 C4:7 C4:6 C4:6 C4:5 C4:4 C4:3 C4:3 C4:2 C4:1
+win 4: C4:13 C4:13 C4:13 C4:13 E4:13 E4:13 E4:13 E4:13 G4:13 G4:13 G4:13 G4:13 C5:14 C5:13 C5:12 C5:11 C5:10 C5:9 C5:8 C5:7 C5:6 C5:5 C5:4 C5:3 C5:2 C5:1
+pop1 1: D#4:15 F4:15 G#4:15 A#4:15 C5:12 D#5:8 F5:4
+pop2 1: F4:15 G4:15 A#4:15 C5:15 D5:12 F5:8 G5:4
+pop3 1: G4:15 A4:15 C5:15 D5:15 E5:12 G5:8 A5:4
+pop4 1: A4:15 B4:15 D5:15 E5:15 F#5:12 A5:8 B5:4
+pop5 1: B4:15 C#5:15 E5:15 F#5:15 G#5:12 B5:8 C#6:4
+pop6 1: C#5:15 D#5:15 F#5:15 G#5:15 A#5:12 C#6:8 D#6:4

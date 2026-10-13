@@ -1,0 +1,33 @@
+{
+ "name": "title_cpc_mode0",
+ "note": "λογότυπο overscan 192x32 αδιαφανές — πάνω μπορντούρα",
+ "cell": {
+  "w": 192,
+  "h": 32
+ },
+ "masked": false,
+ "bytes_per_frame": 3072,
+ "total_bytes": 3072,
+ "sheet": {
+  "cols": 1,
+  "rows": 1,
+  "w": 192,
+  "h": 32
+ },
+ "tags": [
+  {
+   "name": "title",
+   "from": 0,
+   "to": 0
+  }
+ ],
+ "frames": [
+  {
+   "index": 0,
+   "name": "sugar_byte",
+   "tag": "title",
+   "x": 0,
+   "y": 0
+  }
+ ]
+}

@@ -1,0 +1,237 @@
+{
+ "name": "hud_cpc_mode0",
+ "note": "κελιά HUD 4x8 αδιαφανή — ψηφία, σύμβολα, εικονίδια, πλαίσιο",
+ "cell": {
+  "w": 4,
+  "h": 8
+ },
+ "masked": false,
+ "bytes_per_frame": 16,
+ "total_bytes": 448,
+ "sheet": {
+  "cols": 7,
+  "rows": 4,
+  "w": 28,
+  "h": 32
+ },
+ "tags": [
+  {
+   "name": "digits",
+   "from": 0,
+   "to": 9
+  },
+  {
+   "name": "symbols",
+   "from": 10,
+   "to": 13
+  },
+  {
+   "name": "icons",
+   "from": 14,
+   "to": 18
+  },
+  {
+   "name": "panel",
+   "from": 19,
+   "to": 27
+  }
+ ],
+ "frames": [
+  {
+   "index": 0,
+   "name": "digit_0",
+   "tag": "digits",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "index": 1,
+   "name": "digit_1",
+   "tag": "digits",
+   "x": 4,
+   "y": 0
+  },
+  {
+   "index": 2,
+   "name": "digit_2",
+   "tag": "digits",
+   "x": 8,
+   "y": 0
+  },
+  {
+   "index": 3,
+   "name": "digit_3",
+   "tag": "digits",
+   "x": 12,
+   "y": 0
+  },
+  {
+   "index": 4,
+   "name": "digit_4",
+   "tag": "digits",
+   "x": 16,
+   "y": 0
+  },
+  {
+   "index": 5,
+   "name": "digit_5",
+   "tag": "digits",
+   "x": 20,
+   "y": 0
+  },
+  {
+   "index": 6,
+   "name": "digit_6",
+   "tag": "digits",
+   "x": 24,
+   "y": 0
+  },
+  {
+   "index": 7,
+   "name": "digit_7",
+   "tag": "digits",
+   "x": 0,
+   "y": 8
+  },
+  {
+   "index": 8,
+   "name": "digit_8",
+   "tag": "digits",
+   "x": 4,
+   "y": 8
+  },
+  {
+   "index": 9,
+   "name": "digit_9",
+   "tag": "digits",
+   "x": 8,
+   "y": 8
+  },
+  {
+   "index": 10,
+   "name": "colon",
+   "tag": "symbols",
+   "x": 12,
+   "y": 8
+  },
+  {
+   "index": 11,
+   "name": "slash",
+   "tag": "symbols",
+   "x": 16,
+   "y": 8
+  },
+  {
+   "index": 12,
+   "name": "times",
+   "tag": "symbols",
+   "x": 20,
+   "y": 8
+  },
+  {
+   "index": 13,
+   "name": "plus",
+   "tag": "symbols",
+   "x": 24,
+   "y": 8
+  },
+  {
+   "index": 14,
+   "name": "moves",
+   "tag": "icons",
+   "x": 0,
+   "y": 16
+  },
+  {
+   "index": 15,
+   "name": "star",
+   "tag": "icons",
+   "x": 4,
+   "y": 16
+  },
+  {
+   "index": 16,
+   "name": "goal",
+   "tag": "icons",
+   "x": 8,
+   "y": 16
+  },
+  {
+   "index": 17,
+   "name": "time",
+   "tag": "icons",
+   "x": 12,
+   "y": 16
+  },
+  {
+   "index": 18,
+   "name": "lock",
+   "tag": "icons",
+   "x": 16,
+   "y": 16
+  },
+  {
+   "index": 19,
+   "name": "panel_tl",
+   "tag": "panel",
+   "x": 20,
+   "y": 16
+  },
+  {
+   "index": 20,
+   "name": "panel_tc",
+   "tag": "panel",
+   "x": 24,
+   "y": 16
+  },
+  {
+   "index": 21,
+   "name": "panel_tr",
+   "tag": "panel",
+   "x": 0,
+   "y": 24
+  },
+  {
+   "index": 22,
+   "name": "panel_ml",
+   "tag": "panel",
+   "x": 4,
+   "y": 24
+  },
+  {
+   "index": 23,
+   "name": "panel_mc",
+   "tag": "panel",
+   "x": 8,
+   "y": 24
+  },
+  {
+   "index": 24,
+   "name": "panel_mr",
+   "tag": "panel",
+   "x": 12,
+   "y": 24
+  },
+  {
+   "index": 25,
+   "name": "panel_bl",
+   "tag": "panel",
+   "x": 16,
+   "y": 24
+  },
+  {
+   "index": 26,
+   "name": "panel_bc",
+   "tag": "panel",
+   "x": 20,
+   "y": 24
+  },
+  {
+   "index": 27,
+   "name": "panel_br",
+   "tag": "panel",
+   "x": 24,
+   "y": 24
+  }
+ ]
+}
