@@ -44,7 +44,41 @@ def main():
     g.wait_state(10)
     g.vm.run_frames(5)
     save(g, "05_scores.png")
+    manual_shots(g)
     g.close()
+
+
+def manual_shots(g):
+    """the manual's pictures: docs/*.png"""
+    docs = os.path.join(ROOT, "docs")
+
+    def level(n):
+        g.press(J_ESC)
+        g.wait_state(9)
+        g.vm.poke("menu_sel", 0)
+        g.vm.poke("cur_level", n)
+        g.press(J_FIRE)
+        g.wait_state(0)
+        g.vm.run_frames(30)
+
+    g.vm.poke("cur_level", 0)
+    g.vm.poke("menu_sel", 0)
+    g.press(J_ESC)
+    g.wait_state(9)
+    g.vm.run_frames(20)
+    g.vm.screenshot(os.path.join(docs, "menu.png"))
+    for n in (0, 16, 55):
+        level(n)
+        g.vm.screenshot(os.path.join(docs, f"level-{n + 1:02d}.png"))
+    level(0)                                            # Sugar Crush: the goal met
+    g.vm.poke("lv_star1", b"\0\0")
+    from game import moves
+    a, c = moves(g.board())[0]
+    g.swap(a, c)
+    g.wait_state(11, 6000)
+    g.vm.run_frames(50)
+    g.vm.screenshot(os.path.join(docs, "sugar-crush.png"))
+    print("screenshots docs/menu.png, level-01/17/56.png, sugar-crush.png")
 
 
 if __name__ == "__main__":

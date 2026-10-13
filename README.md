@@ -4,6 +4,9 @@
 of the [Amstrad CPC game](../SugarByteCPC): the same rules, levels, codes, graphics and sounds, rebuilt for the
 C64's hardware.
 
+**Player's manual:** [English](manual.md) ([PDF](docs/manual-en.pdf)) · [Ελληνικά](manual.el.md)
+([PDF](docs/manual-el.pdf))
+
 | | |
 |---|---|
 | ![Menu](docs/screenshots/01_menu.png) | ![Jelly](docs/screenshots/02_jelly.png) |
@@ -52,6 +55,8 @@ make            # build/sugar.d64 (disk) and build/sugar.tap (tape)
 make run        # x64sc with the disk autostarted
 make test       # headless tests in VICE (binary monitor)
 make gfx        # src/data/ from assets/, levels/, music/, voice/ (and build/mockup_*.png)
+make screenshots    # docs/screenshots/*.png and the manual's pictures
+make manuals    # docs/manual-en.pdf, docs/manual-el.pdf (needs fpdf2)
 ```
 
 - Disk: `LOAD"SUGAR",8` and `RUN`.

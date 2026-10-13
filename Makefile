@@ -2,6 +2,8 @@
 #   make        -> build/sugar.d64 (disk) and build/sugar.tap (tape)
 #   make run    -> x64sc with autostart
 #   make test   -> headless tests (VICE binary monitor)
+#   make manuals -> docs/manual-en.pdf, docs/manual-el.pdf (fpdf2)
+#   make screenshots -> docs/screenshots/*.png and the manual's pictures
 #   make gfx    -> src/data/ from assets/cpc, levels/, music/, voice/
 #                  (and build/mockup_*.png)
 
@@ -27,7 +29,7 @@ VOICES  := sugarbyte sweet delicious crush
 # -Wall all warnings
 TASSFLAGS := -C -a -B -Wall -I src
 
-.PHONY: all run test gfx clean
+.PHONY: all run test gfx manuals screenshots clean
 
 all: $(D64) $(TAP)
 
@@ -62,6 +64,18 @@ run: $(D64)
 
 test: $(D64)
 	$(PYTHON) tests/run_tests.py
+
+MANUAL_PICS := $(wildcard docs/*.png)
+manuals: docs/manual-en.pdf docs/manual-el.pdf
+
+docs/manual-en.pdf: manual.md $(MANUAL_PICS) tools/mkmanual.py
+	$(PYTHON) tools/mkmanual.py $< $@
+
+docs/manual-el.pdf: manual.el.md $(MANUAL_PICS) tools/mkmanual.py
+	$(PYTHON) tools/mkmanual.py $< $@
+
+screenshots: $(PRG)
+	$(PYTHON) tools/screenshots64.py
 
 clean:
 	rm -rf $(BUILD) src/data
