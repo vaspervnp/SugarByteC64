@@ -51,8 +51,8 @@ PENS = {0: 0, 1: 1, 2: 12, 3: 6, 4: 3, 5: 2, 6: 9, 7: 8, 8: 9, 9: 7,
 # and the shade must stand out from the blue board.
 CANDY_PENS = [
     {5: 10, 6: 2},              # red: light red, red
-    {7: 8, 8: 2},               # orange: orange, red
-    {9: 7, 8: 8},               # yellow: yellow, orange
+    {7: 7, 8: 8},               # orange: yellow, orange (the C64 has no real orange)
+    {9: 15, 8: 12},             # yellow: a sugar cube, light grey and grey
     {10: 13, 11: 5},            # green: light green, green
     {12: 3, 13: 14},            # blue: cyan, light blue
     {14: 4, 15: 0},             # purple: purple, black
