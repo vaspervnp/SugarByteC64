@@ -30,6 +30,8 @@ And your C64 has never sounded this sweet:
   a hint, and slide diagonally around the gaps — hardware sprites at work.
 - **SUGAR CRUSH!** Finish a level with moves to spare and every leftover move
   turns into a striped candy — then they all go off at once.
+- **THREE DIFFICULTIES.** EASY to learn the ropes, MEDIUM with fewer moves and
+  higher targets, HARD for the sweet-toothed professional.
 - **SIXTY HAND-MADE LEVELS** — jelly to clear, icing to crack, chocolate that
   spreads, licorice that won't budge, cherries and hazelnuts to bring home, and
   boards shaped like diamonds, hourglasses and rings, where candies slide
@@ -86,8 +88,9 @@ choose with **FIRE**, **SPACE** or **RETURN**.
 |---|---|
 | **PLAY** | Start the level shown under it. |
 | **LEVEL NN** | Enter a **level code** to jump to a level you've reached before (see *Level codes*). |
+| **EASY / MEDIUM / HARD** | The difficulty: **FIRE** or **left / right** change it (see *Difficulty*). |
 | **SOUND ON / OFF** | Turn the music on or off. |
-| **SCORES** | Your best score and stars for every level. Twenty levels to a page: **left** and **right** turn the page, **FIRE** or **RUN/STOP** goes back. |
+| **SCORES** | Your best score and stars for every level, in the difficulty you've chosen. Twenty levels to a page: **left** and **right** turn the page, **FIRE** or **RUN/STOP** goes back. |
 
 ---
 
@@ -133,7 +136,7 @@ From top to bottom:
 - **The arrows** — moves left. **The padlock** — this level's code.
 - **The goal** — what you need to do to win the level: points to reach, jelly
   squares left to clear, ingredients left to bring down.
-- **LEVEL NN** — the level you're on.
+- **LEVEL NN** — the level you're on, and under it the difficulty.
 - **Three stars** and the **progress bar** — they light up as your score
   passes each star's target.
 
@@ -164,6 +167,24 @@ the next level, with its code shown in the panel.
 
 If you run out of moves first, the border flashes. Press **FIRE** to try the
 same level again, or **RUN/STOP** for the menu.
+
+---
+
+## DIFFICULTY
+
+Choose it in the menu before you press **PLAY**. The boards are the same in
+every difficulty; what changes is how much they ask of you.
+
+| | |
+|---|---|
+| **EASY** | The levels as they were made: plenty of moves to learn every trick. |
+| **MEDIUM** | Fewer moves for jelly and ingredients, higher scores to reach — and to earn the stars. |
+| **HARD** | Fewer moves still and higher targets again. Every move counts. |
+
+The further you go, the harder each step gets: the targets were set by
+playing every level thousands of times, so the later levels of HARD leave you
+very little room. The level codes are the same in every difficulty, and the
+best scores and stars are kept separately for each one.
 
 ---
 
@@ -245,7 +266,8 @@ and lets you try again.
 
 The first one's free: level 1 is **4721**.
 
-*Best scores and stars are kept for as long as the computer stays on.*
+*Best scores and stars are kept for every difficulty, for as long as the
+computer stays on.*
 
 ---
 

@@ -7,6 +7,7 @@
 ; A = level (from 0): its header into the variables, its cells into cell[].
 ; The levels have no address table: they are decoded in order up to it.
 load_level
+        sta ll_lv
         sta ll_n
         inc ll_n
         lda #<levels
@@ -16,7 +17,10 @@ load_level
 -       jsr decode_level
         dec ll_n
         bne -
-        lda lv_colours
+        lda difficulty
+        beq +
+        jsr load_harder
++       lda lv_colours
         sta ncolours
         lda lv_moves
         sta moves
@@ -27,6 +31,58 @@ load_level
         rts
 
 ll_n    .byte 0
+ll_lv   .byte 0
+
+; MEDIUM, HARD: the level's moves and stars from harder[] (tools/levels.py),
+; HARDER_REC bytes by level, NLEVELS levels by difficulty
+load_harder
+        ldx difficulty                  ; i = (difficulty - 1) * NLEVELS + level
+        lda ll_lv
+        clc
+        adc harder_first-1,x
+        sta t0
+        sta ptr                         ; * 7 = * 8 - i
+        lda #0
+        sta ptr+1
+        asl ptr
+        rol ptr+1
+        asl ptr
+        rol ptr+1
+        asl ptr
+        rol ptr+1
+        lda ptr
+        sec
+        sbc t0
+        sta ptr
+        bcs +
+        dec ptr+1
++       lda ptr
+        clc
+        adc #<harder
+        sta ptr
+        lda ptr+1
+        adc #>harder
+        sta ptr+1
+        ldy #HARDER_REC-1
+-       lda (ptr),y
+        sta lh_rec,y
+        dey
+        bpl -
+        lda lh_rec
+        sta lv_moves
+        ldx #1
+-       lda lh_rec+1,x                  ; the stars, two bytes each
+        sta lv_star1,x
+        lda lh_rec+3,x
+        sta lv_star2,x
+        lda lh_rec+5,x
+        sta lv_star3,x
+        dex
+        bpl -
+        rts
+
+harder_first    .byte 0, NLEVELS        ; MEDIUM, HARD: their first record
+lh_rec  .fill HARDER_REC
 
 ; reads a byte at ptr, ptr + 1. Keeps X, Y.
 get_byte

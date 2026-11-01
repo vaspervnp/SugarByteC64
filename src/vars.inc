@@ -44,6 +44,7 @@ title_on        .byte ?         ; the menu's title changes colour
 title_t         .byte ?
 irq_t           .byte ?         ; the IRQ's scratch
 speaking        .byte ?
+difficulty      .byte ?         ; D_EASY, D_MEDIUM, D_HARD (the menu)
 
 ; cleared by game_new, from here to G_END
 G_START
@@ -127,4 +128,5 @@ A_END
         .cerror * > BEST, "arrays full"
         .endv
 
-best            = BEST          ; by level: points (3 BCD), stars
+best            = BEST          ; by level: points (3 BCD), stars - easy;
+                                ; BEST_MEDIUM, BEST_HARD the same

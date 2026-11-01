@@ -71,14 +71,15 @@ def check_sync():
 
 
 def main():
-    boot_path, game_path, entry, out_path = sys.argv[1:]
+    boot_path, game_path, entry, out_path = sys.argv[1:5]
+    title = sys.argv[5] if len(sys.argv) > 5 else "SUGAR BYTE"      # the name FOUND shows
     entry = int(entry, 0)
     check_sync()
     boot = open(boot_path, "rb").read()
     game = open(game_path, "rb").read()
     bload = boot[0] | boot[1] << 8
     bdata = boot[2:]
-    name = b"SUGAR BYTE".ljust(16, b" ")
+    name = title.upper().encode("ascii")[:16].ljust(16, b" ")
     header = bytes([0x01, bload & 255, bload >> 8, (bload + len(bdata)) & 255, (bload + len(bdata)) >> 8]) + name
     header = header.ljust(192, b" ")
     pulses = kernal_block(header, 0x6A00) + pause(300000) + kernal_block(bdata, 0x1500) + pause(200000)

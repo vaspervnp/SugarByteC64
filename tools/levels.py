@@ -28,6 +28,7 @@ KINDS = list(CELLS)                 # η σειρά του cell_kinds
 BLOCKS = 'o123cl'
 CODE_FIRST, CODE_STEP = 4721, 3587
 STAR_UNIT = 500
+HARDER = ('medium', 'hard')        # the difficulties above easy (the level itself)
 
 
 def bcd(n, digits):
@@ -66,6 +67,8 @@ def parse(path):
                 cur[key] = int(val[0])
             elif key == 'stars':
                 cur['stars'] = [int(v) for v in val]
+            elif key in HARDER:
+                cur[key] = {'moves': int(val[0]), 'stars': [int(v) for v in val[1:]]}
             elif key == 'cells':
                 rows = cur['cells'] = []
             else:
@@ -86,6 +89,16 @@ def check(lv):
         sys.exit(f"{name}: χρώματα 4-6")
     if len(lv['stars']) != 3 or lv['stars'] != sorted(lv['stars']):
         sys.exit(f"{name}: τρία αστέρια, σε αύξουσα σειρά")
+    prev = lv
+    for d in HARDER:
+        h = lv.get(d)
+        if h is None:
+            continue
+        if len(h['stars']) != 3 or h['stars'] != sorted(h['stars']):
+            sys.exit(f"{name}: {d}: three stars, in rising order")
+        if h['moves'] > prev['moves'] or h['stars'][0] < prev['stars'][0]:
+            sys.exit(f"{name}: {d} is easier than the difficulty below it")
+        prev = h
     wants_ingr = lv['goal'] in (2, 3)
     if wants_ingr != (lv['ingredients'] > 0):
         sys.exit(f"{name}: τα υλικά και ο στόχος δεν συμφωνούν")
@@ -165,6 +178,14 @@ def main():
         out.append(f"; level {i + 1}: {len(data)} bytes")
         for k in range(0, len(data), 16):
             out.append('        .byte ' + ','.join(f"${b:02x}" for b in data[k:k + 16]))
+    out += ['', '; medium, hard: by level moves (BCD) and the three stars (BCD hundreds, MSB',
+            '; first) - load_level puts them over the level\'s own', 'HARDER_REC = 7', 'harder']
+    for d in HARDER:
+        out.append(f"; {d}")
+        for i, lv in enumerate(levels):
+            h = lv.get(d, lv)
+            data = bcd(h['moves'], 2) + [b for p in h['stars'] for b in hundreds(p)]
+            out.append('        .byte ' + ','.join(f"${b:02x}" for b in data) + f"    ; {i + 1}")
     out.append('')
     out.append('; codes: ' + ' '.join(f"{i + 1}={c:04d}" for i, c in enumerate(level_codes(len(levels)))))
     open(dst, 'w').write('\n'.join(out) + '\n')

@@ -666,13 +666,16 @@ class Player:
 
 
 def main():
+    """mkmusic64.py [music dir] [output .asm]: music/ and src/data/music.asm by default"""
+    music_dir = sys.argv[1] if len(sys.argv) > 1 else MUSIC_DIR
+    out = sys.argv[2] if len(sys.argv) > 2 else OUT
     try:
-        song = load_all()
+        song = load_all(music_dir)
     except MusicError as e:
         print(f"mkmusic64: {e}", file=sys.stderr)
         return 1
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w") as f:
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    with open(out, "w") as f:
         f.write(asm_source(song))
     secs = ", ".join(f"{t['name']} {sum(t['ticks']) / 50:.0f} s" for t in song.tunes)
     print(f"mkmusic64: {len(song.tunes)} tunes ({secs}), {len(song.ins)} instruments, "

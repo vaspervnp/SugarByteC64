@@ -72,6 +72,7 @@ class CellsTest(unittest.TestCase):
     def test_sugar_crush(self):
         g = self.g
         g.wait_state(0)
+        level = g.vm.peek8("cur_level")
         g.set_board(board_from(BASE + ROW6 + " " + ROW7), [0] * 64)
         g.vm.poke("lv_goal", 0)                              # points, and 0 reach it
         g.vm.poke("lv_star1", b"\0\0")
@@ -83,7 +84,30 @@ class CellsTest(unittest.TestCase):
         g.shot("test_win.png")
         g.press(16)                                          # the next level
         g.wait_state(0)
-        self.assertEqual(g.vm.peek8("cur_level"), 1)
+        self.assertEqual(g.vm.peek8("cur_level"), level + 1)
+
+    def test_best_by_difficulty(self):
+        g = self.g
+        g.wait_state(0)
+        level = g.vm.peek8("cur_level")
+        g.vm.poke("difficulty", 2)                           # HARD
+        try:
+            g.set_board(board_from(BASE + ROW6 + " " + ROW7), [0] * 64)
+            g.vm.poke("lv_goal", 0)
+            g.vm.poke("lv_star1", b"\0\0")
+            g.vm.poke("moves", 0x01)                         # the last move wins
+            easy = g.vm.peek(0x400, 256)
+            g.swap(50, 58)
+            g.wait_state(7, 6000)
+            hard = g.vm.peek(0x700 + level * 4, 4)
+            self.assertEqual(hard[:3], g.vm.peek("score", 3))
+            self.assertGreaterEqual(hard[3], 1)
+            self.assertEqual(g.vm.peek(0x400, 256), easy)    # easy's untouched
+            self.assertEqual(g.vm.peek(0x600 + level * 4, 4), b"\0\0\0\0")
+            g.press(16)
+            g.wait_state(0)
+        finally:
+            g.vm.poke("difficulty", 0)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,74 @@
+{
+ "name": "cells",
+ "note": "C64 colours, 16 = transparent (halloween/tools/mkart.py)",
+ "cell": {
+  "w": 12,
+  "h": 24
+ },
+ "sheet": {
+  "cols": 7,
+  "rows": 2
+ },
+ "frames": [
+  {
+   "index": 0,
+   "name": "plain",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "index": 1,
+   "name": "plain_alt",
+   "x": 12,
+   "y": 0
+  },
+  {
+   "index": 2,
+   "name": "hole",
+   "x": 24,
+   "y": 0
+  },
+  {
+   "index": 3,
+   "name": "jelly1",
+   "x": 36,
+   "y": 0
+  },
+  {
+   "index": 4,
+   "name": "jelly2",
+   "x": 48,
+   "y": 0
+  },
+  {
+   "index": 5,
+   "name": "icing3",
+   "x": 60,
+   "y": 0
+  },
+  {
+   "index": 6,
+   "name": "icing2",
+   "x": 72,
+   "y": 0
+  },
+  {
+   "index": 7,
+   "name": "icing1",
+   "x": 0,
+   "y": 24
+  },
+  {
+   "index": 8,
+   "name": "chocolate",
+   "x": 12,
+   "y": 24
+  },
+  {
+   "index": 9,
+   "name": "licorice",
+   "x": 24,
+   "y": 24
+  }
+ ]
+}

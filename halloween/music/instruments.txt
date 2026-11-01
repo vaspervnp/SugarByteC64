@@ -1,0 +1,28 @@
+# SID instruments of the Halloween edition (tools/mkmusic64.py explains the
+# fields). The voices: 1 the melody, 2 the bass (through the filter), 3 drums
+# and chords (the effects take it while they play).
+
+# the game: Grieg's trolls. A reedy bassoon (a thin pulse, plucked short) ...
+bsn:    ad=05 sr=48 pw=280 pws=+10 wave=pulse:0
+# ... and, the second time round, a brighter saw with a wobble
+saw:    ad=06 sr=68 vib=8,3,3 wave=saw:0
+# pizzicato bass through the low-pass, the filter snapping shut
+pizz:   ad=04 sr=00 pw=800 pws=+30 flt=b0,-8,c wave=pulse:0
+
+# drums: absolute notes, so a transposed pattern does not change them
+kick:   ad=05 sr=00 pw=800 wave=pulse:C5,pulse:G4,pulse:C4,pulse:G3,tri:D3,tri:A2,tri:F2
+snare:  ad=06 sr=00 pw=800 wave=noise:A6,pulse:D4,noise:F6,noise:E6,noise:D6,noise:C6
+hat:    ad=02 sr=00 wave=noise:A7
+# a thunder roll for the fills: low noise, slow to die
+thund:  ad=0a sr=00 wave=noise:C4,noise:B3,noise:A3,noise:G3
+
+# chords: a fast arpeggio, minor, major, diminished (all minor thirds)
+arpm:   ad=05 sr=40 pw=500 pws=+30 wave=pulse:0,pulse:3,pulse:7,@0
+arpM:   ad=05 sr=40 pw=500 pws=+30 wave=pulse:0,pulse:4,pulse:7,@0
+arpd:   ad=05 sr=60 pw=500 pws=+30 wave=pulse:0,pulse:3,pulse:6,pulse:9,@0
+
+# the menu: Bach's organ. Pulse that flips an octave every tick (two ranks
+# of pipes), slow vibrato; a lower rank for the left hand; a pedal drone
+organ:  ad=19 sr=bb pw=600 pws=+08 vib=20,6,4 wave=pulse:0,pulse:12,@0
+organ2: ad=19 sr=ba pw=400 pws=+06 wave=pulse:0,pulse:7,@0
+pedal:  ad=2a sr=ca pw=800 pws=+04 flt=60,+1,a wave=pulse:0

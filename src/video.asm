@@ -79,7 +79,7 @@ video_init
         sta VIC_SPR_COL+4
         lda #GREY
         sta VIC_SPR_MC1
-        lda #CYAN
+        lda #SELECT_COL                 ; (the theme's: data/gfx.inc)
         sta VIC_SPR_COL+5
         rts
 

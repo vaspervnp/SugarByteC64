@@ -723,7 +723,7 @@ st_over
         lda anim_k
         and #16
         beq +
-        lda #BLUE
+        lda #OVER_FLASH
 +       sta VIC_BORDER                  ; (0: black)
         lda joy_edge
         and #J_ESC

@@ -1,10 +1,11 @@
-"""Every level as the game decodes it, against levels/levels.txt; the codes."""
+"""Every level as the game decodes it, against levels/levels.txt, in every
+difficulty; the difficulty in the menu; the codes."""
 
 import os
 import sys
 import unittest
 
-from game import Game, J_FIRE, J_ESC, J_RIGHT, J_UP, J_DOWN
+from game import Game, J_FIRE, J_ESC, J_LEFT, J_RIGHT, J_UP, J_DOWN
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "tools"))
@@ -58,6 +59,44 @@ class LevelsTest(unittest.TestCase):
                         self.assertEqual(board[i], 7)          # no candy on blockers / holes
                 hud_code = CODES[n]
                 self.assertEqual(hud_code, int(f"{CODES[n]:04d}"))
+
+    def test_difficulties(self):
+        vm = self.g.vm
+        try:
+            for d, name in enumerate(lvtool.HARDER, 1):
+                vm.poke("difficulty", d)
+                for n, lv in enumerate(LEVELS):
+                    h = lv.get(name, lv)
+                    with self.subTest(difficulty=name, level=n + 1):
+                        self.start(n)
+                        self.assertEqual(vm.peek8("lv_goal"), lv["goal"])
+                        self.assertEqual(vm.peek8("lv_moves"), bcd(h["moves"]))
+                        self.assertEqual(vm.peek8("moves"), bcd(h["moves"]))
+                        self.assertEqual(vm.peek8("ingr_left"), bcd(lv["ingredients"]))
+                        for k, star in enumerate(("lv_star1", "lv_star2", "lv_star3")):
+                            got = vm.peek(star, 2)
+                            self.assertEqual(got[0] << 8 | got[1], bcd(h["stars"][k] // 100))
+        finally:
+            vm.poke("difficulty", 0)
+
+    def test_difficulty_in_menu(self):
+        g = self.g
+        g.press(J_ESC)
+        g.wait_state(9)
+        g.vm.poke("menu_sel", 2)                    # EASY
+        seen = []
+        for keys in (J_FIRE, J_FIRE, J_FIRE, J_LEFT, J_LEFT, J_RIGHT):
+            g.press(keys)
+            seen.append(g.vm.peek8("difficulty"))
+        self.assertEqual(seen, [1, 2, 0, 2, 1, 2])
+        g.vm.poke("menu_sel", 0)
+        g.press(J_FIRE)                             # PLAY: in HARD
+        g.wait_state(0)
+        h = LEVELS[g.vm.peek8("cur_level")]["hard"]
+        self.assertEqual(g.vm.peek8("moves"), bcd(h["moves"]))
+        g.vm.run_frames(30)
+        g.shot("test_hard.png")
+        g.vm.poke("difficulty", 0)
 
     def test_code_entry(self):
         g = self.g

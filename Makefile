@@ -6,6 +6,7 @@
 #   make screenshots -> docs/screenshots/*.png and the manual's pictures
 #   make gfx    -> src/data/ from assets/cpc, levels/, music/, voice/
 #                  (and build/mockup_*.png)
+#   make halloween -> the Halloween edition (halloween/build/sugar.d64, .tap)
 
 X64     ?= x64sc
 C1541   ?= c1541
@@ -29,7 +30,7 @@ VOICES  := sugarbyte sweet delicious crush
 # -Wall all warnings
 TASSFLAGS := -C -a -B -Wall -I src
 
-.PHONY: all run test gfx manuals screenshots clean
+.PHONY: all run test gfx manuals screenshots clean halloween
 
 all: $(D64) $(TAP)
 
@@ -77,5 +78,9 @@ docs/manual-el.pdf: manual.el.md $(MANUAL_PICS) tools/mkmanual.py
 screenshots: $(PRG)
 	$(PYTHON) tools/screenshots64.py
 
+halloween:
+	$(MAKE) -C halloween
+
 clean:
 	rm -rf $(BUILD) src/data
+	$(MAKE) -C halloween clean

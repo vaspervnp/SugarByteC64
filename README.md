@@ -7,6 +7,9 @@ C64's hardware.
 **Player's manual:** [English](manual.md) ([PDF](docs/manual-en.pdf)) · [Ελληνικά](manual.el.md)
 ([PDF](docs/manual-el.pdf))
 
+**Halloween edition:** [halloween/](halloween/README.md) — jack-o'-lanterns, ghosts and bats on a black board,
+Grieg and Bach on the SID, thunder and a voice from the crypt (`make halloween`).
+
 | | |
 |---|---|
 | ![Menu](docs/screenshots/01_menu.png) | ![Jelly](docs/screenshots/02_jelly.png) |
@@ -27,6 +30,13 @@ boards; candies slide diagonally around them. Moves left over at a win become st
 **Sugar Crush**. Every level has a 4-digit **code** (shown in the HUD; at a win the next level's): LEVEL in the menu
 takes you back there. After 5 seconds idle a move wiggles as a hint; a board with no move is shuffled.
 
+Three **difficulties**, chosen in the menu: **EASY** is the levels as they are in `levels/levels.txt`; **MEDIUM**
+and **HARD** (the `medium`/`hard` lines of every level) give fewer moves for jelly and ingredients and higher
+targets for points and stars. They were tuned with `tools/leveltune.py --difficulty medium|hard`: the simulator
+(`tools/levelsim.py`) plays every level hundreds of times per move count, and the win rate it aims at falls from
+level 1 to level 60, 15 points lower on MEDIUM and 30 on HARD than on EASY; never easier than the difficulty
+below. Best scores are kept per difficulty.
+
 Controls: joystick in port 2 (or 1), or the cursor keys / W A S D; fire, SPACE or RETURN selects and swaps;
 **M** music on/off; **RUN/STOP** (or ←) back to the menu. In the code entry: left/right a digit, up/down its value,
 fire accepts, RUN/STOP cancels.
@@ -46,7 +56,7 @@ fire accepts, RUN/STOP cancels.
   arpeggios (A from the CPC, a new B section), a calm menu tune; the CPC's effects on voice 3 (the pop rises with
   the chain). **Speech**: "Sugar Byte!", "Sweet!", "Delicious!", "Sugar Crush!" as 4-bit samples on the SID's
   volume register (with the voices held at a constant level, so the 8580 speaks too).
-- Best points and stars per level, by page (SCORES), for as long as the machine is on.
+- Best points and stars per level and difficulty, by page (SCORES), for as long as the machine is on.
 
 ## Build & run
 
@@ -57,6 +67,7 @@ make test       # headless tests in VICE (binary monitor)
 make gfx        # src/data/ from assets/, levels/, music/, voice/ (and build/mockup_*.png)
 make screenshots    # docs/screenshots/*.png and the manual's pictures
 make manuals    # docs/manual-en.pdf, docs/manual-el.pdf (needs fpdf2)
+make halloween  # the Halloween edition: halloween/build/sugar.d64, .tap
 ```
 
 - Disk: `LOAD"SUGAR",8` and `RUN`.
@@ -76,8 +87,10 @@ assets/cpc/ the CPC's graphics (sheets, the source of everything drawn)
 levels/     the levels (the CPC's)
 music/      SID instruments, tunes, effects
 voice/      the phrases (WAV)
-tools/      converters (graphics, levels, music, speech, tape), screenshots
+tools/      converters (graphics, levels, music, speech, tape), the level simulator and
+            tuner, screenshots
 tests/      headless VICE tests
+halloween/  the Halloween edition: its theme, pictures, music, voice (the code is src/)
 ```
 
 ---

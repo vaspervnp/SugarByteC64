@@ -2,28 +2,29 @@
 ; menu.asm - the menu and the scores
 ;
 ; The title and the candy canes (draw_frame), four plates, the pointer left of
-; the chosen one, a row of candies above the foot.
+; the chosen one.
 ;
 ;   PLAY       the level cur_level from the start
 ;   LEVEL NN   fire: "CODE 0000" - left/right a digit, up/down its value,
 ;              fire accepts, RUN/STOP cancels
+;   EASY       fire, left/right: EASY, MEDIUM, HARD (level.asm)
 ;   SOUND ON   fire: music on/off
 ;   SCORES     the best points and stars of every level
 ; =============================================================================
 
-MENU_ITEMS      = 4
+MENU_ITEMS      = 5
 MENU_ROW0       = 5                     ; the first plate's row
 MENU_STEP       = 3
 MENU_TILES      = 6                     ; a plate: left, 4 middle, right
 MENU_X          = 8                     ; the plate's column
 MENU_PLATE_W    = MENU_TILES*4
 MENU_PTR_X      = 3                     ; the pointer
-MENU_CANDY_ROW  = 17
 MENU_CREDIT_ROW = 21
 MI_PLAY         = 0
 MI_LEVELS       = 1
-MI_SOUND        = 2
-MI_SCORES       = 3
+MI_MODE         = 2
+MI_SOUND        = 3
+MI_SCORES       = 4
 
 ; the start: every variable (and the progress) 0, and the menu
 menu_start
@@ -36,10 +37,13 @@ menu_start
 -       sta BOARD,x
         sta ARRAYS,x
         sta BEST,x
+        sta BEST_MEDIUM,x
+        sta BEST_HARD,x
         inx
         bne -
         sta cur_level
         sta menu_sel
+        sta difficulty                  ; D_EASY
         lda #1
         sta mus_on
         jsr menu_enter
@@ -72,22 +76,6 @@ menu_enter
         adc #1
         cmp #MENU_ITEMS
         bcc -
-        lda #0                          ; the six colours, over the foot
-        sta t3
--       lda t3
-        asl a
-        asl a
-        adc t3                          ; * 5 columns
-        adc #6
-        sta blk_x
-        lda #MENU_CANDY_ROW
-        sta blk_y
-        lda t3
-        jsr draw_candy_at
-        inc t3
-        lda t3
-        cmp #6
-        bcc -
         lda #<txt_credit                ; the signatures
         sta ptr
         lda #>txt_credit
@@ -113,7 +101,14 @@ txt_code        .text "CODE "
 txt_sound_on    .text "SOUND ON", $ff
 txt_sound_off   .text "SOUND OFF", $ff
 txt_scores      .text "SCORES", $ff
+txt_easy        .text "EASY", $ff
+txt_medium      .text "MEDIUM", $ff
+txt_hard        .text "HARD", $ff
         .enc "none"
+
+; the difficulty's name, by difficulty
+txt_diff_lo     .byte <txt_easy, <txt_medium, <txt_hard
+txt_diff_hi     .byte >txt_easy, >txt_medium, >txt_hard
 
 ; A = item -> A = its plate's row
 menu_item_row
@@ -217,6 +212,12 @@ menu_label
         bne +
         lda #<txt_scores
         ldx #>txt_scores
+        bne _set
++       cmp #MI_MODE
+        bne +
+        ldy difficulty
+        lda txt_diff_lo,y
+        ldx txt_diff_hi,y
         bne _set
 +       cmp #MI_SOUND
         bne _levels
@@ -324,9 +325,24 @@ st_menu
         bne +
         jsr draw_pointer
 +       jsr get_dir
+        sta t3
+        and #J_LEFT|J_RIGHT
+        beq _updown
+        lda menu_sel
+        cmp #MI_MODE
+        bne _fire
+        lda t3
+        and #J_LEFT
+        beq _harder
+        ldx difficulty                  ; left: easier, right: harder
+        dex
+        bpl set_difficulty
+        ldx #D_HARD
+        bne set_difficulty
+_harder jmp next_difficulty
+_updown lda t3
         and #J_UP|J_DOWN
         beq _fire
-        sta t3
         lda menu_sel
         jsr erase_pointer
         lda t3
@@ -363,10 +379,26 @@ _notplay
         jmp start_code
 +       cmp #MI_SCORES
         beq scores_enter
+        cmp #MI_MODE
+        beq next_difficulty
         jsr toggle_music                ; SOUND
         lda #MI_SOUND
         jmp draw_plate
 _r      rts
+
+; EASY -> MEDIUM -> HARD -> EASY, on its plate
+next_difficulty
+        ldx difficulty
+        inx
+        cpx #D_HARD+1
+        bcc set_difficulty
+        ldx #D_EASY
+set_difficulty
+        stx difficulty
+        lda #SFX_SELECT
+        sta sfx_request
+        lda #MI_MODE
+        jmp draw_plate
 
 ; -----------------------------------------------------------------------------
 ; SCORES: pages of 20 levels in two columns - level, best points, stars.
@@ -387,28 +419,42 @@ scores_draw
         lda #$0b
         sta VIC_CTRL1
         jsr draw_frame
-        ldx #5                          ; "SCORES 1/3"
--       lda txt_scores,x
-        sta menu_buf,x
-        dex
-        bpl -
+        ldy difficulty                  ; "MEDIUM 1/3": the difficulty's
+        lda txt_diff_lo,y
+        sta ptr
+        lda txt_diff_hi,y
+        sta ptr+1
+        ldy #0
+-       lda (ptr),y
+        sta menu_buf,y
+        iny
+        cmp #$ff
+        bne -
         lda #$fe
-        sta menu_buf+6
+        sta menu_buf-1,y
         lda scores_pg
         clc
         adc #GL_DIGIT+1
-        sta menu_buf+7
+        sta menu_buf,y
         lda #GL_SLASH
-        sta menu_buf+8
+        sta menu_buf+1,y
         lda #GL_DIGIT+SCORES_PAGES
-        sta menu_buf+9
+        sta menu_buf+2,y
         lda #$ff
-        sta menu_buf+10
+        sta menu_buf+3,y
+        iny                             ; centred
+        iny
+        iny
+        sty t0
+        lda #40
+        sec
+        sbc t0
+        lsr a
+        tax
         lda #<menu_buf
         sta ptr
         lda #>menu_buf
         sta ptr+1
-        ldx #15
         ldy #5*8
         jsr draw_text
         jsr _first
@@ -436,15 +482,10 @@ _lv     lda menu_tmp                    ; the place on the page, 0-19
         ldy sd_l
         jsr draw_bcd1
         inx
+        stx sd_t
         lda menu_tmp                    ; the points
-        asl a
-        asl a
-        clc
-        adc #<best
-        sta ptr
-        lda #>best
-        adc #0
-        sta ptr+1
+        jsr best_ptr
+        ldx sd_t
         lda sd_l
         sta db_l
         ldy #3
@@ -489,6 +530,7 @@ _first  lda scores_pg                   ; * 20
 sd_first .byte 0
 sd_x    .byte 0
 sd_l    .byte 0
+sd_t    .byte 0
 
 st_scores
         lda joy_edge
@@ -521,31 +563,38 @@ st_scores
 ; -----------------------------------------------------------------------------
 record_best
         lda cur_level
-        asl a
-        asl a
-        tax
-        lda score                       ; BCD, MSB first: byte by byte
-        cmp best,x
+        jsr best_ptr
+        ldy #0
+-       lda score,y                     ; BCD, MSB first: byte by byte
+        cmp (ptr),y
         bcc _stars
         bne _copy
-        lda score+1
-        cmp best+1,x
-        bcc _stars
-        bne _copy
-        lda score+2
-        cmp best+2,x
-        bcc _stars
-_copy   lda score
-        sta best,x
-        lda score+1
-        sta best+1,x
-        lda score+2
-        sta best+2,x
-_stars  lda win_n
-        cmp best+3,x
+        iny
+        cpy #3
+        bcc -
+_copy   ldy #2
+-       lda score,y
+        sta (ptr),y
+        dey
+        bpl -
+_stars  ldy #3
+        lda win_n
+        cmp (ptr),y
         bcc +
-        sta best+3,x
+        sta (ptr),y
 +       rts
+
+; A = level -> ptr = its best[] (points, stars) in this difficulty's page
+best_ptr
+        asl a
+        asl a
+        sta ptr
+        ldx difficulty
+        lda best_pages,x
+        sta ptr+1
+        rts
+
+best_pages .byte >BEST, >BEST_MEDIUM, >BEST_HARD
 
 ; the menu's title: every letter takes the next hue, every 8 frames
 ; (tools/mkgfx64.py: 6 sets of the title's colours)

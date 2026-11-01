@@ -1,0 +1,33 @@
+# Sound effects of the Halloween edition, on voice 3, one step per 1/50 s.
+# name prio: steps    step = note:volume | nNN:volume (noise; NN 0-31, the
+# AY's period: higher is lower) | r
+# A higher priority interrupts a lower one, never the other way round.
+#
+# Spookier than the game's: tritones, whole-tone scales, a creaking swap,
+# thunder for the bombs, a ghost's "wooo" for a lost level.
+
+# a creak of the tritone
+select 1: B4:12 F5:10
+# a door that creaks: up a semitone and back
+swap 1: E4:11 F4:11 F#4:10 F4:9 E4:8
+# no: two low tritones
+bad 1: B2:13 B2:12 F2:12 F2:11 F2:9 F2:7
+# a witch's zap down the line
+beam 2: G#6:14 E6:13 C6:12 G#5:11 E5:10 C5:9 G#4:8 E4:7 C4:6 G#3:5
+# a blast
+wrap 3: n6:15 n8:14 n10:13 n12:12 n14:11 n16:10 n18:9 n20:8 n22:7 n24:6 n26:5 n28:4
+# thunder: a crack, then a long roll that dies away
+bomb 3: n4:15 n6:15 n10:14 n14:14 n18:13 n22:12 n24:12 n26:11 n28:11 n29:10 n30:10 n31:9 n31:9 n31:8 n30:8 n31:7 n31:7 n30:6 n31:6 n31:5 n31:4 n31:3 n31:2
+# an ingredient home: a spooky arpeggio, minor
+collect 2: A5:13 A5:13 A5:13 C6:13 C6:13 C6:13 E6:13 E6:13 E6:13 A6:14 A6:13 A6:12 G#6:11 A6:10 G#6:9 A6:8 G#6:6
+# out of moves: a ghost's "wooo", sliding down
+over 4: E5:12 E5:12 D#5:12 D#5:12 D5:12 D5:11 C#5:11 C#5:11 C5:11 C5:10 B4:10 B4:10 A#4:10 A#4:9 A4:9 A4:9 G#4:8 G#4:8 G4:8 G4:7 F#4:7 F#4:6 F4:6 F4:5 E4:5 E4:4 D#4:4 D#4:3 D4:3 D4:2 C#4:2 C#4:1
+# a level won: A minor rises, and ends on a major chord (a ghost's laugh)
+win 4: A3:13 A3:13 C4:13 C4:13 E4:13 E4:13 A4:13 A4:13 C#5:14 C#5:14 E5:14 E5:14 A5:14 A5:13 E5:12 A5:11 E5:10 A5:9 E5:8 A5:7 E5:6 A5:5 E5:4 A5:3 E5:2 A5:1
+# the pops: whole-tone runs, a step higher with every link of the chain
+pop1 1: C4:15 D4:15 E4:15 F#4:15 G#4:12 A#4:8 C5:4
+pop2 1: D4:15 E4:15 F#4:15 G#4:15 A#4:12 C5:8 D5:4
+pop3 1: E4:15 F#4:15 G#4:15 A#4:15 C5:12 D5:8 E5:4
+pop4 1: F#4:15 G#4:15 A#4:15 C5:15 D5:12 E5:8 F#5:4
+pop5 1: G#4:15 A#4:15 C5:15 D5:15 E5:12 F#5:8 G#5:4
+pop6 1: A#4:15 C5:15 D5:15 E5:15 F#5:12 G#5:8 A#5:4

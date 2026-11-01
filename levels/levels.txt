@@ -23,6 +23,8 @@ goal score
 moves 20
 colours 4
 stars 25000 32000 43000
+medium  20 37000 44500 52000
+hard    20 47000 55000 66000
 cells
 ........
 ........
@@ -38,6 +40,8 @@ goal score
 moves 18
 colours 4
 stars 24500 31000 38500
+medium  18 30500 37000 44500
+hard    18 37500 43500 51500
 cells
 o......o
 ........
@@ -53,6 +57,8 @@ goal score
 moves 18
 colours 4
 stars 16000 21500 26000
+medium  18 21500 26000 31500
+hard    18 26000 31000 36500
 cells
 oo....oo
 o......o
@@ -68,6 +74,8 @@ goal score
 moves 16
 colours 4
 stars 12500 18000 25000
+medium  16 18500 24000 31500
+hard    16 22500 28000 35000
 cells
 ........
 ........
@@ -83,6 +91,8 @@ goal jelly
 moves 14
 colours 5
 stars 7000 9000 13000
+medium  10 7000 9000 13000
+hard    9 7000 9000 13000
 cells
 ........
 ........
@@ -98,6 +108,8 @@ goal jelly
 moves 40
 colours 5
 stars 9500 14500 21500
+medium  26 9500 14500 21500
+hard    21 9500 14500 21500
 cells
 ........
 ........
@@ -113,6 +125,8 @@ goal jelly
 moves 20
 colours 5
 stars 10000 13500 18500
+medium  17 10000 13500 18500
+hard    14 10000 13500 18500
 cells
 ........
 .jjjjjj.
@@ -128,6 +142,8 @@ goal jelly
 moves 40
 colours 5
 stars 14000 19500 27500
+medium  27 14000 19500 27500
+hard    23 14000 19500 27500
 cells
 j......j
 .j....j.
@@ -143,6 +159,8 @@ goal jelly
 moves 22
 colours 5
 stars 10500 13000 16500
+medium  17 10500 13000 16500
+hard    14 10500 13000 16500
 cells
 oo....oo
 o.jjjj.o
@@ -158,6 +176,8 @@ goal jelly
 moves 35
 colours 5
 stars 21500 27000 33000
+medium  30 21500 27000 33000
+hard    26 21500 27000 33000
 cells
 jjjjjjjj
 jjjjjjjj
@@ -173,6 +193,8 @@ goal score
 moves 20
 colours 5
 stars 6500 10000 12000
+medium  20 7500 10500 13000
+hard    20 9500 13000 15000
 cells
 ........
 ........
@@ -188,6 +210,8 @@ goal jelly
 moves 19
 colours 5
 stars 6000 8500 12000
+medium  14 6000 8500 12000
+hard    11 6000 8500 12000
 cells
 ........
 ........
@@ -203,6 +227,8 @@ goal jelly
 moves 21
 colours 5
 stars 7000 10000 14500
+medium  15 7000 10000 14500
+hard    12 7000 10000 14500
 cells
 ........
 ........
@@ -218,6 +244,8 @@ goal score
 moves 22
 colours 5
 stars 6500 9500 12000
+medium  22 9000 12000 14000
+hard    22 10000 13000 15500
 cells
 ........
 ........
@@ -234,6 +262,8 @@ moves 20
 colours 5
 ingredients 1
 stars 6500 9000 13500
+medium  15 6500 9000 13500
+hard    11 6500 9000 13500
 cells
 ........
 ........
@@ -250,6 +280,8 @@ moves 40
 colours 5
 ingredients 2
 stars 11000 17500 25000
+medium  32 11500 17500 25000
+hard    26 11500 17500 25000
 cells
 o......o
 ........
@@ -266,6 +298,8 @@ moves 40
 colours 5
 ingredients 2
 stars 18000 23000 29000
+medium  35 18000 23000 29000
+hard    28 18000 23000 29000
 cells
 ........
 ........
@@ -281,6 +315,8 @@ goal score
 moves 25
 colours 6
 stars 4000 7000 8000
+medium  25 5000 7500 9000
+hard    25 6000 8500 9500
 cells
 ........
 ........
@@ -296,6 +332,8 @@ goal jelly
 moves 11
 colours 5
 stars 6000 8000 12000
+medium  10 6000 8000 12000
+hard    8 6000 8000 12000
 cells
 ........
 ........
@@ -312,6 +350,8 @@ moves 40
 colours 5
 ingredients 2
 stars 17000 24000 31000
+medium  39 18000 24500 31500
+hard    33 18000 24500 31500
 cells
 ........
 .jjjjjj.
@@ -329,6 +369,8 @@ goal score
 moves 20
 colours 5
 stars 4500 7500 9000
+medium  20 5500 8500 10000
+hard    20 6500 9500 11000
 cells
 ........
 ........
@@ -344,6 +386,8 @@ goal jelly
 moves 16
 colours 5
 stars 7000 9000 13000
+medium  13 7000 9000 13000
+hard    10 7000 9000 13000
 cells
 ........
 ........
@@ -359,6 +403,8 @@ goal score
 moves 20
 colours 5
 stars 5000 7500 9000
+medium  20 6500 9000 10500
+hard    20 7500 10000 11500
 cells
 ........
 .oo..oo.
@@ -374,6 +420,8 @@ goal jelly
 moves 12
 colours 5
 stars 5000 6500 9000
+medium  10 5000 6500 9000
+hard    9 5000 6500 9000
 cells
 ........
 ...oo...
@@ -390,6 +438,8 @@ moves 38
 colours 5
 ingredients 2
 stars 11000 16500 23000
+medium  29 11000 16500 23000
+hard    23 11000 16500 23000
 cells
 ........
 ........
@@ -405,6 +455,8 @@ goal score
 moves 22
 colours 5
 stars 5000 8000 9500
+medium  22 6000 9000 10500
+hard    22 7500 10500 12500
 cells
 ........
 ........
@@ -420,6 +472,8 @@ goal jelly
 moves 40
 colours 5
 stars 8000 11500 14500
+medium  38 8500 11500 14500
+hard    30 8500 11500 14500
 cells
 jj....jj
 jj.oo.jj
@@ -436,6 +490,8 @@ moves 37
 colours 5
 ingredients 2
 stars 11500 16500 24000
+medium  30 11500 16500 24000
+hard    23 11500 16500 24000
 cells
 ........
 ........
@@ -451,6 +507,8 @@ goal jelly
 moves 15
 colours 5
 stars 5500 7500 11000
+medium  13 5500 7500 11000
+hard    11 5500 7500 11000
 cells
 ........
 .o.oo.o.
@@ -467,6 +525,8 @@ moves 39
 colours 5
 ingredients 2
 stars 19000 23000 30500
+medium  31 19000 23000 30500
+hard    27 19000 23000 30500
 cells
 ........
 ........
@@ -484,6 +544,8 @@ goal score
 moves 22
 colours 6
 stars 2500 5000 6000
+medium  22 3500 6000 7000
+hard    22 4000 6500 7500
 cells
 ........
 ........
@@ -499,6 +561,8 @@ goal jelly
 moves 10
 colours 5
 stars 5000 7500 11500
+medium  8 5000 7500 11500
+hard    7 5000 7500 11500
 cells
 ........
 ...cc...
@@ -515,6 +579,8 @@ moves 34
 colours 5
 ingredients 2
 stars 12500 17500 25500
+medium  25 12500 17500 25500
+hard    21 12500 17500 25500
 cells
 ........
 ........
@@ -530,6 +596,8 @@ goal jelly
 moves 40
 colours 5
 stars 11500 15000 19500
+medium  39 12000 16000 21000
+hard    31 12000 16000 21000
 cells
 jjj..jjj
 j.o..o.j
@@ -545,6 +613,8 @@ goal score
 moves 24
 colours 5
 stars 6000 8000 9500
+medium  24 7500 9500 10500
+hard    24 8500 10500 11500
 cells
 ........
 ........
@@ -560,6 +630,8 @@ goal jelly
 moves 18
 colours 5
 stars 5000 7000 10000
+medium  15 5000 7000 10000
+hard    13 5000 7000 10000
 cells
 ........
 ..2222..
@@ -576,6 +648,8 @@ moves 38
 colours 5
 ingredients 2
 stars 12000 16500 22000
+medium  35 12000 16500 22500
+hard    27 12000 16500 22500
 cells
 ........
 ........
@@ -591,6 +665,8 @@ goal jelly
 moves 40
 colours 5
 stars 16500 21000 29500
+medium  34 16500 21000 29500
+hard    28 16500 21000 29500
 cells
 jjjjjjjj
 jo.jj.oj
@@ -607,6 +683,8 @@ moves 32
 colours 5
 ingredients 2
 stars 16000 20500 26000
+medium  25 16000 20500 26000
+hard    21 16000 20500 26000
 cells
 ........
 ........
@@ -622,6 +700,8 @@ goal score
 moves 22
 colours 5
 stars 7000 9500 11000
+medium  22 9000 11500 13000
+hard    22 10500 13000 14000
 cells
 oo....oo
 o......o
@@ -639,6 +719,8 @@ goal jelly
 moves 40
 colours 5
 stars 12000 16500 20500
+medium  33 12000 16500 20500
+hard    27 12000 16500 20500
 cells
 .J....J.
 JJ....JJ
@@ -655,6 +737,8 @@ moves 40
 colours 5
 ingredients 2
 stars 7000 9500 13500
+medium  34 7000 10000 13500
+hard    26 7000 10000 13500
 cells
 ........
 .o....o.
@@ -670,6 +754,8 @@ goal jelly
 moves 18
 colours 5
 stars 12000 15500 19500
+medium  16 12000 15500 20500
+hard    14 12000 15500 21000
 cells
 ...jj...
 ..jjjj..
@@ -685,6 +771,8 @@ goal score
 moves 24
 colours 6
 stars 5500 8500 9500
+medium  24 6000 8500 10000
+hard    24 7000 10000 11000
 cells
 ........
 .l.ll.l.
@@ -701,6 +789,8 @@ moves 33
 colours 5
 ingredients 2
 stars 15500 19000 23000
+medium  27 15500 19000 23500
+hard    23 15500 19000 24000
 cells
 ........
 ........
@@ -716,6 +806,8 @@ goal jelly
 moves 36
 colours 5
 stars 12000 15000 19500
+medium  31 12000 15000 19500
+hard    25 12000 15000 19500
 cells
 jjjjjjjj
 j......j
@@ -732,6 +824,8 @@ moves 34
 colours 5
 ingredients 2
 stars 10500 15500 24000
+medium  27 10500 15500 24000
+hard    22 10500 15500 24000
 cells
 ........
 ........
@@ -747,6 +841,8 @@ goal jelly
 moves 40
 colours 5
 stars 9500 11500 15000
+medium  37 9500 11500 15000
+hard    31 9500 11500 15000
 cells
 o.jjjj.o
 .o.jj.o.
@@ -762,6 +858,8 @@ goal score
 moves 26
 colours 6
 stars 5000 7500 8500
+medium  26 6000 8500 9500
+hard    26 7000 9500 10500
 cells
 ........
 ........
@@ -778,6 +876,8 @@ moves 40
 colours 5
 ingredients 3
 stars 22000 28500 35500
+medium  38 22000 28500 35500
+hard    32 22000 28500 35500
 cells
 ........
 .o....o.
@@ -795,6 +895,8 @@ goal jelly
 moves 40
 colours 5
 stars 16000 21000 28000
+medium  36 16000 21000 28000
+hard    29 16000 21000 28000
 cells
 jjjjjjjj
 jjjjjjjj
@@ -811,6 +913,8 @@ moves 39
 colours 5
 ingredients 2
 stars 12500 18000 25000
+medium  30 12500 18000 25000
+hard    23 12500 18000 25000
 cells
 ........
 .cc..cc.
@@ -826,6 +930,8 @@ goal jelly
 moves 33
 colours 5
 stars 24000 29000 34000
+medium  30 24500 29000 34500
+hard    26 24500 29000 34500
 cells
 J.J..J.J
 .J.JJ.J.
@@ -841,6 +947,8 @@ goal score
 moves 26
 colours 5
 stars 8000 10500 11500
+medium  26 10000 12500 14500
+hard    26 11000 13500 15500
 cells
 oo....oo
 o.3333.o
@@ -857,6 +965,8 @@ moves 29
 colours 5
 ingredients 2
 stars 12000 16000 22500
+medium  25 12000 16000 22500
+hard    19 12000 16000 22500
 cells
 ...oo...
 ........
@@ -872,6 +982,8 @@ goal jelly
 moves 40
 colours 5
 stars 8000 10000 12500
+medium  34 8000 10000 12500
+hard    27 8000 10000 12500
 cells
 jjj..jjj
 jj.oo.jj
@@ -888,6 +1000,8 @@ moves 34
 colours 5
 ingredients 2
 stars 7500 11000 16000
+medium  26 7500 11000 16000
+hard    18 7500 11000 16000
 cells
 ........
 ........
@@ -903,6 +1017,8 @@ goal jelly
 moves 40
 colours 5
 stars 18500 23500 30000
+medium  34 18500 23500 30000
+hard    29 18500 23500 30000
 cells
 jjjjjjjj
 jo2jj2oj
@@ -918,6 +1034,8 @@ goal score
 moves 28
 colours 5
 stars 3000 4500 5000
+medium  28 3500 5000 5500
+hard    28 4000 5000 5500
 cells
 ........
 ...oo...
@@ -934,6 +1052,8 @@ moves 40
 colours 5
 ingredients 2
 stars 12500 19000 24500
+medium  37 13000 19000 24500
+hard    30 13000 19000 24500
 cells
 o......o
 .jjjjjj.

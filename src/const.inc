@@ -5,6 +5,7 @@
 ; $0300-$03ff  the game's arrays (cleared by game_new)
 ; $0400-$04ff  best[]: points (3 BCD) and stars of every level
 ; $0500-$05ff  the sound player
+; $0600-$07ff  best[] of medium and of hard
 ; $0801-$bfff  program and data
 ; $c000-$c3e7  screen RAM (the bitmap's colours), $c3f8 the sprite pointers
 ; $c400-$c5ff  sprite blocks (copied in when needed)
@@ -14,6 +15,8 @@ BOARD           = $0200
 ARRAYS          = $0300
 BEST            = $0400
 SSTATE          = $0500
+BEST_MEDIUM     = $0600
+BEST_HARD       = $0700
 SCREEN          = $c000
 SPR_PTRS        = SCREEN + $3f8
 SPR_BLOCKS      = $c400
@@ -35,8 +38,8 @@ COLS            = 8
 ROWS            = 8
 HUD_X           = 24
 FOOT_ROW        = 24
-BOARD_BG        = BLUE          ; $d021 in the game: the board and the HUD
-MENU_BG         = BLACK
+; BOARD_BG ($d021 in the game: the board and the HUD), MENU_BG, OVER_FLASH
+; (the border at a game over), HUD_SEAM: the theme's, in data/gfx.inc
 
 ; --- the board -----------------------------------------------------------------
 EMPTY           = 7             ; board[]: colour 7 = an empty cell
@@ -51,6 +54,9 @@ G_JELLY         = 1
 G_INGREDIENTS   = 2
 G_BOTH          = 3
 G_ENDLESS       = $ff           ; no goal (tests)
+D_EASY          = 0             ; the difficulty: the level as it is,
+D_MEDIUM        = 1             ; fewer moves, more points
+D_HARD          = 2
 MAX_RUNS        = 24
 MAX_SPAWN       = 16
 MAX_BEAMS       = 16

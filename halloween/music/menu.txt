@@ -1,0 +1,38 @@
+# Menu tune: the opening of the Toccata in D minor, BWV 565 (attributed to
+# J. S. Bach), arranged for the SID: the organ in two ranks, its echo an
+# octave lower, a pedal drone through the filter, and the diminished chord
+# that rolls up to D minor.
+# tune: menu
+# quarter: 16
+# loop: yes
+#
+# Bars: the flourish high (1-2), in the middle (3-4), low (5-6), then the
+# diminished seventh on C# (7) to D minor (8); then four bars of broken chords
+# over the pedal (written for this, in the same manner): Dm | C#dim | Dm | Gm A.
+
+# --- melody (voice 1) ---
+pat m1: @organ A5/16 G5/16 A5/2. r/8 | G5/16 F5/16 E5/16 D5/16 C#5/4 D5/2 |
+        A4/16 G4/16 A4/2. r/8 | G4/16 F4/16 E4/16 D4/16 C#4/4 D4/2 |
+        A3/16 G3/16 A3/2. r/8 | E3/16 F3/16 C#3/16 D3/16 D3/2. |
+        C#4/16 E4/16 G4/16 A#4/16 C#5/16 E5/16 G5/16 A#5/16 C#6/2 |
+        D6/8 A5/8 F5/8 D5/8 D5/2
+pat m2: @organ D5/8 F5/8 A5/8 D6/8 A5/8 F5/8 D5/8 F5/8 | C#5/8 E5/8 G5/8 A#5/8 G5/8 E5/8 C#5/8 E5/8 |
+        D5/8 F5/8 A5/8 D6/8 A5/8 F5/8 D5/8 A4/8 | G4/8 A#4/8 D5/8 G5/8 E5/8 C#5/8 A4/8 C#5/8
+
+# --- pedal (voice 2): D, under it all ---
+pat ped: @pedal D2/1
+pat pedC: @pedal C#2/1
+pat pedA: @pedal A1/1
+pat pedG: @pedal G1/2 A1/2
+seq pd: ped ped ped ped ped ped pedC ped ped pedA ped pedG
+
+# --- voice 3: the left hand an octave down, then the chords ---
+pat e1: @organ2 A4/16 G4/16 A4/2. r/8 | G4/16 F4/16 E4/16 D4/16 C#4/4 D4/2 |
+        A3/16 G3/16 A3/2. r/8 | G3/16 F3/16 E3/16 D3/16 C#3/4 D3/2 |
+        A2/16 G2/16 A2/2. r/8 | E2/16 F2/16 C#2/16 D2/16 D2/2.
+pat ch: @arpd C#4/1 | @arpm D4/1
+pat ch2: @arpm D4/1 | @arpd C#4/1 | @arpm D4/1 | @arpm G3/2 @arpM A3/2
+
+v1: > m1 m2
+v2: > pd
+v3: > e1 ch ch2

@@ -1,0 +1,40 @@
+# Game tune: "In the Hall of the Mountain King" (Edvard Grieg, Peer Gynt,
+# 1875), arranged for the SID, in A minor. The trolls creep in on a bassoon,
+# then come back on a saw, the theme an octave up.
+# tune: game
+# quarter: 20
+# loop: yes
+#
+# Form: intro (2 bars of pizzicato), then A (4 bars, the theme in A minor),
+# B (4 bars, the theme on E), then A an octave higher and B, on the saw.
+# Harmony by half bars:
+#   A:  Am Am | B Bb | Am Am | C C
+#   B:  E E | C E | E E | E D
+
+# --- melody (voice 1) ---
+pat rest2: r/2 r/2 r/2 r/2
+pat ta: @bsn A4/8 B4/8 C5/8 D5/8 E5/8 C5/8 E5/4 | D#5/8 B4/8 D#5/4 D5/8 A#4/8 D5/4 |
+        A4/8 B4/8 C5/8 D5/8 E5/8 C5/8 E5/8 A5/8 | G5/8 E5/8 C5/8 E5/8 G5/2
+pat tb: @bsn E5/8 F#5/8 G#5/8 A5/8 B5/8 G#5/8 B5/4 | C6/8 G#5/8 C6/4 B5/8 G#5/8 B5/4 |
+        E5/8 F#5/8 G#5/8 A5/8 B5/8 G#5/8 B5/8 E6/8 | D6/8 B5/8 G#5/8 B5/8 D6/2
+pat ua: @saw A4/8 B4/8 C5/8 D5/8 E5/8 C5/8 E5/4 | D#5/8 B4/8 D#5/4 D5/8 A#4/8 D5/4 |
+        A4/8 B4/8 C5/8 D5/8 E5/8 C5/8 E5/8 A5/8 | G5/8 E5/8 C5/8 E5/8 G5/2
+pat ub: @saw E5/8 F#5/8 G#5/8 A5/8 B5/8 G#5/8 B5/4 | C6/8 G#5/8 C6/4 B5/8 G#5/8 B5/4 |
+        E5/8 F#5/8 G#5/8 A5/8 B5/8 G#5/8 B5/8 E6/8 | D6/8 B5/8 G#5/8 B5/8 D6/4 E6/4
+
+# --- bass (voice 2): half a bar, root and the fifth below, on A (transposed) ---
+pat bq: @pizz A2/8 r/8 E2/8 r/8
+seq bsA: bq bq bq+2 bq+1 bq bq bq+3 bq+3
+seq bsB: bq-5 bq-5 bq+3 bq-5 bq-5 bq-5 bq-5 bq-7
+
+# --- drums and chords (voice 3): half a bar; the chord on A3 (transposed) ---
+pat dm:  @kick C3/8 @arpm A3/8 @snare C3/8 @arpm A3/8
+pat dM:  @kick C3/8 @arpM A3/8 @snare C3/8 @arpM A3/8
+pat dH:  @kick C3/8 @hat C3/8 @snare C3/8 @hat C3/8
+pat dF:  @kick C3/8 @snare C3/16 C3/16 @thund C3/4
+seq dsA: dm dm dM+2 dM+1 dm dm dM+3 dM+3
+seq dsB: dM-5 dM-5 dM+3 dM-5 dM-5 dM-5 dM-5 dF
+
+v1: rest2 > ta tb ua+12 ub
+v2: bq bq bq bq > bsA bsB bsA bsB
+v3: dH dH dH dF > dsA dsB dsA dsB

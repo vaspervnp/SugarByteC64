@@ -39,7 +39,7 @@ def main():
     g.wait_state(0)
     g.press(J_ESC)
     g.wait_state(9)
-    g.vm.poke("menu_sel", 3)
+    g.vm.poke("menu_sel", 4)                            # SCORES
     g.press(J_FIRE)
     g.wait_state(10)
     g.vm.run_frames(5)

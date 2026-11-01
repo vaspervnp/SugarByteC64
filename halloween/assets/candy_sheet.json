@@ -1,0 +1,176 @@
+{
+ "name": "candy",
+ "note": "C64 colours, 16 = transparent (halloween/tools/mkart.py)",
+ "cell": {
+  "w": 12,
+  "h": 24
+ },
+ "sheet": {
+  "cols": 7,
+  "rows": 4
+ },
+ "frames": [
+  {
+   "index": 0,
+   "name": "crystal",
+   "x": 0,
+   "y": 0
+  },
+  {
+   "index": 1,
+   "name": "pumpkin",
+   "x": 12,
+   "y": 0
+  },
+  {
+   "index": 2,
+   "name": "corn",
+   "x": 24,
+   "y": 0
+  },
+  {
+   "index": 3,
+   "name": "potion",
+   "x": 36,
+   "y": 0
+  },
+  {
+   "index": 4,
+   "name": "ghost",
+   "x": 48,
+   "y": 0
+  },
+  {
+   "index": 5,
+   "name": "bat",
+   "x": 60,
+   "y": 0
+  },
+  {
+   "index": 6,
+   "name": "crystal_striped_h",
+   "x": 72,
+   "y": 0
+  },
+  {
+   "index": 7,
+   "name": "pumpkin_striped_h",
+   "x": 0,
+   "y": 24
+  },
+  {
+   "index": 8,
+   "name": "corn_striped_h",
+   "x": 12,
+   "y": 24
+  },
+  {
+   "index": 9,
+   "name": "potion_striped_h",
+   "x": 24,
+   "y": 24
+  },
+  {
+   "index": 10,
+   "name": "ghost_striped_h",
+   "x": 36,
+   "y": 24
+  },
+  {
+   "index": 11,
+   "name": "bat_striped_h",
+   "x": 48,
+   "y": 24
+  },
+  {
+   "index": 12,
+   "name": "crystal_striped_v",
+   "x": 60,
+   "y": 24
+  },
+  {
+   "index": 13,
+   "name": "pumpkin_striped_v",
+   "x": 72,
+   "y": 24
+  },
+  {
+   "index": 14,
+   "name": "corn_striped_v",
+   "x": 0,
+   "y": 48
+  },
+  {
+   "index": 15,
+   "name": "potion_striped_v",
+   "x": 12,
+   "y": 48
+  },
+  {
+   "index": 16,
+   "name": "ghost_striped_v",
+   "x": 24,
+   "y": 48
+  },
+  {
+   "index": 17,
+   "name": "bat_striped_v",
+   "x": 36,
+   "y": 48
+  },
+  {
+   "index": 18,
+   "name": "crystal_wrapped",
+   "x": 48,
+   "y": 48
+  },
+  {
+   "index": 19,
+   "name": "pumpkin_wrapped",
+   "x": 60,
+   "y": 48
+  },
+  {
+   "index": 20,
+   "name": "corn_wrapped",
+   "x": 72,
+   "y": 48
+  },
+  {
+   "index": 21,
+   "name": "potion_wrapped",
+   "x": 0,
+   "y": 72
+  },
+  {
+   "index": 22,
+   "name": "ghost_wrapped",
+   "x": 12,
+   "y": 72
+  },
+  {
+   "index": 23,
+   "name": "bat_wrapped",
+   "x": 24,
+   "y": 72
+  },
+  {
+   "index": 24,
+   "name": "cauldron",
+   "x": 36,
+   "y": 72
+  },
+  {
+   "index": 25,
+   "name": "skull",
+   "x": 48,
+   "y": 72
+  },
+  {
+   "index": 26,
+   "name": "spider",
+   "x": 60,
+   "y": 72
+  }
+ ]
+}

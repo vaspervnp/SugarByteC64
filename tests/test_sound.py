@@ -10,7 +10,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "tools"))
 import mkmusic64  # noqa: E402
 
-SONG = mkmusic64.load_all()
+SONG = mkmusic64.load_all(os.environ.get("SUGAR_MUSIC") or mkmusic64.MUSIC_DIR)
 SFX = {e["name"]: i + 1 for i, e in enumerate(SONG.effects)}
 
 

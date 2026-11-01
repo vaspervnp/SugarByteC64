@@ -15,7 +15,7 @@ import subprocess
 import time
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-BUILD = os.path.join(ROOT, "build")
+BUILD = os.environ.get("SUGAR_BUILD") or os.path.join(ROOT, "build")   # (another edition: halloween/)
 D64 = os.path.join(BUILD, "sugar.d64")
 PRG = os.path.join(BUILD, "sugar.prg")
 LABELS = os.path.join(BUILD, "labels.txt")

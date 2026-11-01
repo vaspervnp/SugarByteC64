@@ -22,6 +22,7 @@ HUD_RULE1_ROW   = 6
 HUD_GOAL1_ROW   = 8                     ; the goals (icons; the cherry one row up)
 HUD_GOAL2_ROW   = 12
 HUD_LEVEL_ROW   = 16
+HUD_DIFF_LINE   = HUD_LEVEL_ROW*8+12    ; EASY, MEDIUM, HARD
 HUD_RULE2_ROW   = 19
 HUD_STARS_ROW   = 20
 HUD_BAR_ROW     = 22
@@ -216,7 +217,7 @@ draw_icon
 ; The HUD, once at the start of a level (on a cleared screen)
 ; -----------------------------------------------------------------------------
 hud_init
-        ldy #ROWS*3-1                   ; the seam with the board: a grey line
+        ldy #ROWS*3-1                   ; the seam with the board: a line
 -       ldx #HUD_X
         jsr set_char
         sty t3
@@ -226,7 +227,7 @@ hud_init
         dey
         bpl -
         iny
-        lda #GREY
+        lda #HUD_SEAM
         sta (colp),y
         ldy t3
         dey
@@ -463,7 +464,7 @@ hud_show_code
 
 ; -----------------------------------------------------------------------------
 ; The level's goals: an icon or a candy and "x NN", or the points to reach.
-; Under them, "LEVEL NN".
+; Under them, "LEVEL NN" and the difficulty.
 ; -----------------------------------------------------------------------------
 hud_goals_init
         lda lv_goal
@@ -533,7 +534,17 @@ _level  lda #<txt_level                 ; LEVEL NN
         adc #1
         jsr bin2bcd
         ldy #HUD_LEVEL_ROW*8
-        jmp draw_bcd1
+        jsr draw_bcd1
+        ldy difficulty                  ; under it the difficulty, centred
+        lda txt_diff_lo,y
+        sta ptr
+        lda txt_diff_hi,y
+        sta ptr+1
+        ldx hud_diff_x,y
+        ldy #HUD_DIFF_LINE
+        jmp draw_text
+
+hud_diff_x      .byte HUD_X+4, HUD_X+3, HUD_X+4 ; EASY, MEDIUM, HARD
 
         .enc "hud"
 txt_level
